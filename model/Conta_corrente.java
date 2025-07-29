@@ -7,8 +7,8 @@ public class Conta_corrente extends Conta {
     }
 
     @Override
-    public void deposita(double valor) throws Operacao_exception{
-        super.deposita(valor - 0.10); // Taxa
+    public void depositar(double valor) throws Operacao_exception{
+        super.depositar(valor - 0.10); // Taxa
     }
 
     @Override

@@ -3,14 +3,14 @@ package model;
 public abstract class Conta {
     protected double saldo;
 
-    public void deposita(double valor) throws Operacao_exception {
+    public void depositar(double valor) throws Operacao_exception {
         if (valor <= 0) {
             throw new Operacao_exception("Valor de depósito inválido: " + valor);
         }
         this.saldo += valor;
     }
 
-    public void saca(double valor) throws Operacao_exception {
+    public void sacar(double valor) throws Operacao_exception {
         if (valor <= 0) {
             throw new Operacao_exception("Valor de saque inválido: " + valor);
         }
@@ -21,8 +21,8 @@ public abstract class Conta {
     }
 
     public void transferir(double valor, Conta destino) throws Operacao_exception {
-        this.saca(valor);
-        destino.deposita(valor);
+        this.sacar(valor);
+        destino.depositar(valor);
     }
 
     public double getSaldo() {

@@ -18,7 +18,7 @@ public class Banco_controller {
         view.exibirMensagem("Depósitos Iniciais:");
         for (Conta conta : contas) {
             try {
-                conta.deposita(1000);
+                conta.depositar(1000);
                 view.exibirMensagem(conta.getTipo() + " - Saldo: R$ " + String.format("%.2f", conta.getSaldo()));
             } catch (Operacao_exception e) {
                 view.exibirMensagem("Erro ao depositar em " + conta.getTipo() + ": " + e.getMessage());
@@ -36,6 +36,5 @@ public class Banco_controller {
 
         view.exibirLinha();
         view.exibirMensagem("Saldo total no banco: R$ " + String.format("%.2f", atualizador.getSaldoTotal()));
-
     }
 }

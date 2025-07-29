@@ -19,7 +19,7 @@ public class Main {
         List<Conta> contas = List.of(conta_comum, conta_corrente, conta_poupanca);
         Banco_view view = new Banco_view();
         Banco_controller controller = new Banco_controller(view, contas);
-
         controller.executar(0.01); // Selic de 1%
+        
     }
 }
